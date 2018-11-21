@@ -21,8 +21,6 @@ $app->register(\Crhg\EloquentExistsRelation\Providers\EloquentExistsRelationProv
 
 # USAGE
 
-リレーション結果の有無を実際にレコードを読み込むことなく知りたい場合は、`withExists`メソッドを使います。有無は結果のモデルの`{リレーション名}_exists`カラムに格納されます。
-
 If you want to know wheather results from a relationship exists without actually loading them you may use the `withExists` method, which will place a {relation}_exists column on your resulting models. For example:
 
 ```php
