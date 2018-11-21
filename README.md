@@ -1,7 +1,7 @@
 # DESCRIPTION
 
 Add an attribute that indicates whether there is an element indicated by the relation specified when acquiring to the Eloquent Model using a subquery.
-It is similar to `withCount`, which finds the number of elements of a relation, but it differs in obtaining only whether it exists without counting. .
+It is similar to `withCount`, which finds the number of elements of a relation, but it differs in obtaining only whether it exists without counting.
 
 # INSTALL
 
