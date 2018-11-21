@@ -10,6 +10,7 @@ namespace Tests;
 
 
 use Crhg\EloquentExistsRelation\Providers\EloquentExistsRelationProvider;
+use Orchestra\Database\ConsoleServiceProvider;
 use Orchestra\Testbench\TestCase;
 use Tests\Models\Bar;
 use Tests\Models\Foo;
@@ -126,6 +127,7 @@ class WithExistsTest extends TestCase
     {
         return [
             EloquentExistsRelationProvider::class,
+            ConsoleServiceProvider::class,
         ];
     }
 }
