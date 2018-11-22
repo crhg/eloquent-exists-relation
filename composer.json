@@ -27,6 +27,7 @@
   "extra": {
     "laravel": {
       "providers": [
+        "\\Crhg\\EloquentExistsRelation\\Providers\\EloquentExistsRelationProvider"
       ]
     }
   },
