@@ -13,6 +13,8 @@ use Crhg\EloquentExistsRelation\Providers\EloquentExistsRelationProvider;
 use Orchestra\Database\ConsoleServiceProvider;
 use Orchestra\Testbench\TestCase;
 use Tests\Models\Bar;
+use Tests\Models\Baz;
+use Tests\Models\BazFoo;
 use Tests\Models\Foo;
 
 
@@ -37,6 +39,21 @@ class WithExistsTest extends TestCase
         Bar::create(['foo_id' => $foo_id, 'name' => 'a']);
         $foo = Foo::withExists(['bars'])->find($foo_id);
         $this->assertTrue($foo->bars_exists);
+    }
+
+    public function testBelongsToManyRelation(): void
+    {
+        $created_foo = Foo::create([]);
+        $foo_id = $created_foo->id;
+
+        $foo = Foo::withExists(['baz'])->find($foo_id);
+        $this->assertFalse($foo->baz_exists);
+
+        $created_baz = Baz::create([]);
+        $baz_id = $created_baz->id;
+        BazFoo::create(['baz_id' => $baz_id, 'foo_id' => $foo_id]);
+        $foo = Foo::withExists(['baz'])->find($foo_id);
+        $this->assertTrue($foo->baz_exists);
     }
 
     public function testAlias(): void
