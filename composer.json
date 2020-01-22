@@ -21,8 +21,8 @@
   },
   "require": {
     "php": "^7.1",
-    "illuminate/database": "^5.6,>=5.6.12",
-    "illuminate/support": "^5.6,>=5.6.12"
+    "illuminate/database": "^5.6,>=5.6.12 || ^6.0",
+    "illuminate/support": "^5.6,>=5.6.12 || ^6.0"
   },
   "extra": {
     "laravel": {
@@ -32,8 +32,8 @@
     }
   },
   "require-dev": {
-    "orchestra/testbench": "^3.5",
-    "orchestra/database": "^3.5",
+    "orchestra/testbench": "^3.5 || ^4.0",
+    "orchestra/database": "^3.5 || ^4.0",
     "mockery/mockery": "^1.2"
   }
 }
